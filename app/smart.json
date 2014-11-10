@@ -1,0 +1,10 @@
+{
+  "packages": {
+    "aramk:d3": {
+      "git": "https://github.com/aramk/d3.git"
+    },
+    "aramk:vega": {
+      "git": "https://github.com/aramk/vega.git"
+    }
+  }
+}
