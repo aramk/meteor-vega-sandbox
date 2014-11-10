@@ -1,0 +1,63 @@
+{
+  "width": 400,
+  "height": 400,
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"label": "Red", "value": 12, "color": "red"},
+        {"label": "Blue", "value": 23, "color": "blue"},
+        {"label": "Green", "value": 47, "color": "green"},
+        {"label": "Orange", "value": 6, "color": "orange"},
+        {"label": "Purple", "value": 52, "color": "purple"},
+        {"label": "Yellow", "value": 19, "color": "yellow"}
+      ],
+      "transform": [
+        {"type": "pie", "value": "data.value"}
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "arc",
+      "from": {"data": "table"},
+      "properties": {
+        "enter": {
+          "x": {"group": "width", "mult": 0.5},
+          "y": {"group": "height", "mult": 0.5},
+          "startAngle": {"field": "startAngle"},
+          "endAngle": {"field": "endAngle"},
+          "innerRadius": {"value": 0},
+          "outerRadius": {"value": 100},
+          "stroke": {"value": "#fff"}
+        },
+        "update": {
+          "fill": {"field": "data.color"},
+          "fillOpacity": {"value": 1}
+        },
+        "hover": {
+          "fillOpacity": {"value": 0.6}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "table"},
+      "properties": {
+        "enter": {
+          "x": {"group": "width", "mult": 0.5},
+          "y": {"group": "height", "mult": 0.5},
+          "radius": {"value": 100, "offset": 8},
+          "theta": {"field": "midAngle"},
+          "fill": {"value": "#000"},
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "text": {"field": "data.label"}
+        },
+        "hover": {
+          "text": {"field": "data.value"}
+        }
+      }
+    }
+  ]
+}

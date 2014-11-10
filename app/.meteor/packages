@@ -6,4 +6,8 @@
 meteor-platform
 autopublish
 insecure
+coffeescript
+less
+
 aramk:vega
+aramk:utility
