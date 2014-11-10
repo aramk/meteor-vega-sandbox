@@ -15,12 +15,11 @@ setPositionFromEvent = ($em, event) ->
 calcValuesSum = (data) -> _.reduce data, ((memo, datum) -> memo + datum.value), 0
 
 Template.pieExample.rendered = ->
-  $chart = @$('.chart-container')
+  $chart = @$('.chart')
   Vega.getSpec('/vega/pie.json').then (spec) ->
     values = spec.data[0].values
     valueSum = calcValuesSum(values)
     Vega.render(spec, $chart).then (args) ->
-      console.log('pie', args)
       view = args.view
       popups = []
       view.on 'mouseover', (event, item) ->

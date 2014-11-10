@@ -1,6 +1,7 @@
 application-configuration@1.0.3
 aramk:d3@3.4.13
-aramk:utility@0.2.1
+aramk:tinycolor@1.1.0
+aramk:utility@0.3.0
 aramk:vega@1.4.2
 autopublish@1.0.1
 autoupdate@1.1.3
