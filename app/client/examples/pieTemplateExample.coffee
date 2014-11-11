@@ -1,4 +1,4 @@
-Template.pieExample2.helpers
+Template.pieTemplateExample.helpers
 
   items: ->
     {

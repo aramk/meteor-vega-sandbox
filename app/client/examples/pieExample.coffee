@@ -37,12 +37,10 @@ Template.pieExample.rendered = ->
         setPositionFromEvent($popup, event)
         console.log('mouseover')
       view.on 'mousemove', (event, item) ->
-        console.log('mousemouse')
         index = item.datum.index
         $popup = popups[index]
         setPositionFromEvent($popup, event)
       view.on 'mouseout', (event, item) ->
-        console.log('mouseout')
         index = item.datum.index
         $popup = popups[index]
         $popup.hide() if $popup
