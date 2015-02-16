@@ -1,4 +1,4 @@
-Template.pieExample3.rendered = ->
+Template.pieClassExample.rendered = ->
   items = {
     'January': 12
     'February': 23

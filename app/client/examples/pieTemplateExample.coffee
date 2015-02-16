@@ -9,3 +9,8 @@ Template.pieTemplateExample.helpers
       'May': 52
       'June': 19
     }
+
+  formatter: ->
+    df = Q.defer()
+    df.resolve((value) -> '[' + value + ']')
+    df.promise

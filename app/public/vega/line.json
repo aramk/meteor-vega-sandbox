@@ -1,0 +1,83 @@
+{
+  "width": 400,
+  "height": 200,
+  "data": [
+    {
+      "name": "stocks",
+      "values": [
+        {"symbol": "MSFT", "date": "Jan 1 2000", "price": 39.81},
+        {"symbol": "MSFT", "date": "Feb 1 2005", "price": 36.35},
+        {"symbol": "MSFT", "date": "Mar 1 2010", "price": 43.22},
+        {"symbol": "AMZN", "date": "Jan 1 2000", "price": 64.56},
+        {"symbol": "AMZN", "date": "Feb 1 2005", "price": 68.87},
+        {"symbol": "AMZN", "date": "Mar 1 2010", "price": 67},
+        {"symbol": "IBM", "date": "Jan 1 2000", "price": 100.52},
+        {"symbol": "IBM", "date": "Feb 1 2005", "price": 92.11},
+        {"symbol": "IBM", "date": "Mar 1 2010", "price": 106.11}
+      ],
+      "format": {
+        "type": "json",
+        "parse": {"date": "date"}
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "x",
+      "type": "time",
+      "range": "width",
+      "domain": {"data": "stocks", "field": "data.date"}
+    },
+    {
+      "name": "y",
+      "type": "linear",
+      "range": "height",
+      "nice": true,
+      "domain": {"data": "stocks", "field": "data.price"}
+    },
+    {
+      "name": "color", "type": "ordinal", "range": "category10"
+    }
+  ],
+  "axes": [
+    {"type": "x", "scale": "x", "tickSizeEnd": 0},
+    {"type": "y", "scale": "y"}
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "from": {
+        "data": "stocks",
+        "transform": [{"type": "facet", "keys": ["data.symbol"]}]
+      },
+      "marks": [
+        {
+          "type": "line",
+          "properties": {
+            "enter": {
+              "x": {"scale": "x", "field": "data.date"},
+              "y": {"scale": "y", "field": "data.price"},
+              "stroke": {"scale": "color", "field": "data.symbol"},
+              "strokeWidth": {"value": 2}
+            }
+          }
+        },
+        {
+          "type": "text",
+          "from": {
+            "transform": [{"type": "filter", "test": "index==data.length-1"}]
+          },
+          "properties": {
+            "enter": {
+              "x": {"scale": "x", "field": "data.date", "offset": 2},
+              "y": {"scale": "y", "field": "data.price"},
+              "fill": {"scale": "color", "field": "data.symbol"},
+              "text": {"field": "data.symbol"},
+              "baseline": {"value": "middle"}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
