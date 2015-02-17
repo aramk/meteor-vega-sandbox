@@ -13,3 +13,12 @@ Template.lineTemplateExample.helpers
       'Jan 1 2000': 100.52
       'Feb 1 2005': 92.11
       'Mar 1 2010': 106.11
+
+  settings: ->
+    labels:
+      x: 'Date'
+      y: 'Price'
+    width: 400
+    height: 200
+    format:
+      x: 'date'

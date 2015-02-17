@@ -40,8 +40,8 @@
     }
   ],
   "axes": [
-    {"type": "x", "scale": "x", "tickSizeEnd": 0},
-    {"type": "y", "scale": "y"}
+    {"type": "x", "scale": "x", "tickSizeEnd": 0, "title": "Time"},
+    {"type": "y", "scale": "y", "title": "Price"}
   ],
   "marks": [
     {
