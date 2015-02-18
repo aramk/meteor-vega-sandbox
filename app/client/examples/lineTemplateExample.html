@@ -1,3 +1,5 @@
 <template name="lineTemplateExample">
-  {{> lineChart items=items settings=settings}}
+  <div style="width: 500px; height: 500px;">
+    {{> chart type="line" items=items settings=settings}}
+  </div>
 </template>
