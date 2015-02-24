@@ -1,21 +1,29 @@
 Template.lineTemplateExample.helpers
 
   items: ->
-    'MSFT': [
-      {x: 'Jan 1 2000', y: 39.81}
-      {x: 'Feb 1 2005', y: 36.35}
-      {x: 'Mar 1 2010', y: 43.22}
-    ]
-    'AMZN': [
-      {x: 'Jan 1 2000', y: 64.56}
-      {x: 'Feb 1 2005', y: 68.87}
-      {x: 'Mar 1 2010', y: 67}
-    ]
-    'IBM': [
-      {x: 'Jan 1 2000', y: 100.52}
-      {x: 'Feb 1 2005', y: 92.11}
-      {x: 'Mar 1 2010', y: 106.11}
-    ]
+    'MSFTWEFEWFEWFWEFWEFEWFEWEWFWFWFWEFEWFWEFEW': {
+      values: [
+        {x: 'Jan 1 2000', y: 39000000.81}
+        {x: 'Feb 1 2005', y: 36000000.35}
+        {x: 'Mar 1 2010', y: 43000000.22}
+      ]
+    }
+    'AMZN': {
+      color: 'yellow'
+      values: [
+        {x: 'Jan 1 2000', y: 64000000.56}
+        {x: 'Feb 1 2005', y: 68000000.87}
+        {x: 'Mar 1 2010', y: 67000000}
+      ]
+    }
+    'IBM': {
+      color: 'blue'
+      values: [
+        {x: 'Jan 1 2000', y: 100000000.52}
+        {x: 'Feb 1 2005', y: 92000000.11}
+        {x: 'Mar 1 2010', y: 106000000.11}
+      ]
+    }
 
   settings: ->
     labels:
@@ -23,7 +31,7 @@ Template.lineTemplateExample.helpers
       y: 'Price'
     width: 400
     height: 200
-    resize: true
+    resize: false
     title: 'Line Chart Test'
     format:
       x: 'date'
