@@ -35,3 +35,6 @@ Template.lineTemplateExample.helpers
     title: 'Line Chart Test'
     format:
       x: 'date'
+    # axes:
+    #   x:
+    #     format: '04,'
